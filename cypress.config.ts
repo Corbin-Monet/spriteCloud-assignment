@@ -4,6 +4,10 @@ export default defineConfig({
   projectId: '123456',
   chromeWebSecurity: false,
   scrollBehavior: "center",
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+      configFile: "./cypress/config/reporter-config.json"
+  },
   retries: {
     runMode: 0,
     openMode: 0,

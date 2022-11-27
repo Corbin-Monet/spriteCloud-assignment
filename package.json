@@ -4,6 +4,16 @@
     "cypress-xpath": "2.0.1"
   },
   "devDependencies": {
+    "cypress-multi-reporters": "^1.6.1",
+    "mocha": "^10.1.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0",
     "typescript": "4.9.3"
+  },
+  "scripts": {
+    "test:chrome": "cypress run --browser chrome",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
   }
 }
