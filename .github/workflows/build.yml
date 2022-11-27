@@ -19,4 +19,4 @@ jobs:
         run: yarn add cypress --dev
 
       - name: Run Cypress spec files
-        run: npx cypress rur
+        run: npx cypress run
