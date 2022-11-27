@@ -15,6 +15,9 @@ jobs:
       - name: Install dependencies
         run: sudo apt update
 
+      - name: Install TypeScript
+        run: npm install -g typescript
+
       - name: Cypress install
         run: yarn add cypress --dev
 
