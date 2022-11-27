@@ -9,6 +9,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install node
+        run: sudo apt install nodejs npm
+
+      - name: Install dependencies
+        run: sudo apt update
+
+      - name: Install TypeScript
+        run: npm install -g typescript
+
       - name: Cypress install
         run: yarn add cypress --dev
 
