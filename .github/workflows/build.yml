@@ -9,9 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install node
-        run: sudo apt install nodejs npm
-
       - name: Cypress install
         run: yarn add cypress --dev
 
