@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress install
-        run: yarn add cypress --dev
+        uses: cypress-io/github-action@v4
 
       - name: Run Cypress spec files
         run: npx cypress run
