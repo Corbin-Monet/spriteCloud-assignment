@@ -1,8 +1,4 @@
 {
-  "dependencies": {
-    "cypress": "^9.5.2",
-    "cypress-xpath": "2.0.1"
-  },
   "devDependencies": {
     "cypress-multi-reporters": "^1.6.1",
     "mocha": "^10.1.0",
