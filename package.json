@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cypress": "^9.5.2",
+    "cypress-xpath": "2.0.1"
+  },
+  "devDependencies": {
+    "typescript": "4.9.3"
+  }
+}
