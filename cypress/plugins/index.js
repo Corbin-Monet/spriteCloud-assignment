@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
-import "./commands";
-import addContext from "mochawesome/addContext";
 /**
  * @type {Cypress.PluginConfig}
  */
+import "./commands";
+import addContext from "mochawesome/addContext";
+
 Cypress.on("test:after:run", (test, runnable) => {
   let videoName = Cypress.spec.name;
   videoName = videoName.replace("/.js.*", ".js");
