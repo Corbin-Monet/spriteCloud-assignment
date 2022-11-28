@@ -16,21 +16,6 @@ describe("Home page has Sample App in Container", () => {
       .homePageContainer()
       .should("contain", "Sample App");
     cy.screenshot("Home Page Container");
-
-    // playgrndHomePagePageObjects.navigateToSampleApp();
-    //
-
-    //assertions here
-    //playgrndHomePagePageObjects.navigateToSampleApp();
-    //cy.screenshot();
-
-    // cy.intercept({
-    //   method: "POST",
-    //   url: cognitoEndPoint,
-    //   headers: {
-    //     "x-amz-target": "AWSCognitoIdentityProviderService.SignUp",
-    //   },
-    // }).as("signUpRequest");
   });
 
   it("Web Element has correct properties", () => {
