@@ -6,7 +6,7 @@ export default defineConfig({
   scrollBehavior: "center",
   reporter: "cypress-multi-reporters",
   reporterOptions: {
-      configFile: "./cypress/config/reporter-config.json"
+      configFile: "./cypress/reporter-config.json"
   },
   retries: {
     runMode: 0,
