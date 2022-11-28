@@ -1,25 +1,37 @@
-name: Cypress Automation
+name: Cypress Tests
 
-on:
-  push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
-
-  workflow_dispatch:
+on: [push]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-    -name: Checkout
-      - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
-          #spec: cypress/integration/spec1.js
-#       - name: Run Cypress UI Automation Tests
-#         run: npx Cypress run --spec (fileName)
+      - name: Checkout
+        uses: actions/checkout@v2
 
-#       - name: Run Cypress API Automation Scripts
-#         run: npx Cypress run --spec (fileName)
+      - name: Install dependencies
+        run: sudo apt update
+
+      - name: Cypress install
+        run: npm install --save-dev cypress@11.2.0
+
+      - name: Run Cypress spec files
+        run: npx cypress run
+        continue-on-error: true
+
+      - name: Copy test execution videos
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+
+      - name: Merge test results into one
+        run: npm run report:merge
+
+      - name: Generate HTML report
+        run: npm run report:generate
+
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
