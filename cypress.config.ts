@@ -12,7 +12,6 @@ export default defineConfig({
     runMode: 0,
     openMode: 0,
   },
-  video: false,
   env: {
     userName: "Corbin",
     password: "pwd"
