@@ -2,9 +2,9 @@ name: Cypress Automation
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
   workflow_dispatch:
 
@@ -17,9 +17,9 @@ jobs:
       - uses: cypress-io/github-action@v4
         with:
           browser: chrome
+          #spec: cypress/integration/spec1.js
+#       - name: Run Cypress UI Automation Tests
+#         run: npx Cypress run --spec (fileName)
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v11.2.0
-        with:
-          build: npm run build
-          start: npm start
+#       - name: Run Cypress API Automation Scripts
+#         run: npx Cypress run --spec (fileName)
