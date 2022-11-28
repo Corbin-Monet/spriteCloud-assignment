@@ -2,6 +2,7 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+
 let loginName;
 
 module.exports = (on, config) => {
