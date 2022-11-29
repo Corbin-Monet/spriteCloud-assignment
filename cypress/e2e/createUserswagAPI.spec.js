@@ -41,8 +41,6 @@ describe("API allows Users MVP functionality", () => {
       }).then((response) => {
         expect(response).property("status").to.equal(200);
       });
-      // .its("body")
-      //.should("deep.contain", { petOrder });
     });
   });
 });
