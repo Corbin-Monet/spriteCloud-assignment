@@ -1,58 +1,48 @@
 /// <reference types ="cypress"/>
 
-let username = "Corbz";
-let firstName = "Corbin";
-let lastName = "Holdsworth";
-let email = "corbin@test.com";
-let password = "test123$";
-let phone = "+447624244662";
-let userStatus = 0;
-
-describe("API allows Users basic functionality", () => {
-  it("Create user", () => {
-    cy.request({
-      url: "/user",
-      method: "POST",
-      body: {
-        id: 1,
-        username: username,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        phone: phone,
-        userStatus: userStatus,
-      },
-    })
-      .its("body")
-      .should("deep.contain", {
-        code: 200,
-      });
+describe("API allows Users MVP functionality", () => {
+  it("API can Create a user", () => {
+    cy.fixture("userCreate").then((userCreate) => {
+      expect(userCreate, "the same data").to.deep.equal(userCreate);
+      cy.request({
+        url: "/user",
+        method: "POST",
+        body: { userCreate },
+      })
+        .its("body")
+        .should("deep.contain", {
+          code: 200,
+        });
+    });
   });
 
-  it("User is able to log in", () => {
-    cy.request({
-      url: "/user/login",
-      method: "GET",
-      body: {
-        username: username,
-        password: password,
-      },
-    })
-      .its("body")
-      .should("deep.contain", {
-        code: 200,
-      });
+  it("Created user is able to log in", () => {
+    cy.fixture("user").then((user) => {
+      expect(user, "the same data").to.deep.equal(user);
+      cy.request({
+        url: "/user/login",
+        method: "GET",
+        body: { user },
+      })
+        .its("body")
+        .should("deep.contain", {
+          code: 200,
+        });
+    });
   });
 
-  it("User is able to log OUT", () => {
-    cy.request({
-      url: "/user/logout",
-      method: "GET",
-    })
-      .its("body")
-      .should("deep.contain", {
-        code: 200,
+  it("User is able to order Pet", () => {
+    cy.fixture("petOrder").then((petOrder) => {
+      expect(petOrder, "the same data").to.deep.equal(petOrder);
+      cy.request({
+        url: "/store/order",
+        method: "POST",
+        body: { petOrder },
+      }).then((response) => {
+        expect(response).property("status").to.equal(200);
       });
+      // .its("body")
+      //.should("deep.contain", { petOrder });
+    });
   });
 });
