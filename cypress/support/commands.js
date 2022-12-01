@@ -5,12 +5,6 @@ Cypress.Commands.add("visitPlayGroundApp", () => {
   cy.url().should("include", "/sampleapp");
 });
 
-Cypress.Commands.add("getEp3VariablesToScope", () => {
-  cy.readFile("cypress/config/ep3Config.json").then((data) => {
-    platfromUrl = cy.log(data.data.URL);
-  });
-});
-
 import "./commands";
 import addContext from "mochawesome/addContext";
 
