@@ -5,6 +5,19 @@ Cypress.Commands.add("visitPlayGroundApp", () => {
   cy.url().should("include", "/sampleapp");
 });
 
+Cypress.Commands.add("testUITestingNavbar", () => {
+  cy.get("nav").contains("a", "UITAP");
+  cy.get('div[id="navbarSupportedContent"]')
+    .contains("a", "Home")
+    .should("have.attr", "href")
+    .and("include", "home");
+
+  cy.get('div[id="navbarSupportedContent"]')
+    .contains("a", "Resources")
+    .should("have.attr", "href")
+    .and("include", "resources");
+});
+
 import "./commands";
 import addContext from "mochawesome/addContext";
 

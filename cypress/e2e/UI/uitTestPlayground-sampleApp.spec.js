@@ -1,7 +1,7 @@
 /// <reference types ="cypress"/>
 
-import playgrndHomePagePageObjects from "../support/page-objects/playgrndHomePagePageObjects";
-import playgrndSampleAppPageobjects from "../support/page-objects/playgrndSampleAppPageobjects";
+import playgrndHomePagePageObjects from "../../support/page-objects/playgrndHomePagePageObjects";
+import playgrndSampleAppPageobjects from "../../support/page-objects/playgrndSampleAppPageobjects";
 
 const userName = Cypress.env("userName");
 const pwd = Cypress.env("password");

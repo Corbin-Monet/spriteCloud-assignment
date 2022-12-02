@@ -14,7 +14,8 @@ export default defineConfig({
   },
   env: {
     userName: "Corbin",
-    password: "pwd"
+    password: "pwd",
+    UITestURL: "http://www.uitestingplayground.com"
   },
   e2e: {
     baseUrl: "https://petstore.swagger.io/v2",
@@ -22,8 +23,12 @@ export default defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
     specPattern: [//'cypress/e2e/**/*.{js,jsx,ts,tsx}',
-      'cypress/e2e/uitTestPlayground-App.spec.js',
-      'cypress/e2e/createUserswagAPI.spec.js'
+    //UI:
+      'cypress/e2e/UI/uitTestPlayground-sampleApp.spec.js',
+      'cypress/e2e/UI/uitTestPlayground-textInput.spec.js',
+      'cypress/e2e/UI/uitTestPlayground-clientSideDelay.spec.js',
+    //API:
+      'cypress/e2e/API/createUserswagAPI.spec.js'
     ]
   },
 })
