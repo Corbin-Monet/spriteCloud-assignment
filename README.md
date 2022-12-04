@@ -21,7 +21,7 @@ The project is setup mainly for "local" change to "Dev" push CI | CD. This will 
 
 **Git actions Pipeline**
 
-1. Make your local changes to the product
+1. Make your local changes to the prodject
 2. Add , merge your tests - Local branch
 3. Ensure your local endPoint / App is started / Running
 4. Ensure that the Cypress BaseURL's are pointing to the local server
@@ -36,14 +36,14 @@ The project is setup mainly for "local" change to "Dev" push CI | CD. This will 
 
 **Run all the tests on your system**
 
-1. run: ```cd "root"```
+1. Ensure you are root
 2. run: ```npx cypress run```
 
 ![image](https://user-images.githubusercontent.com/100212111/205439034-7d2b70a2-0a1f-4ee8-8005-6475b8198ee5.png)
 
 **Run an individual test on your system**
 
-1. run: ```cd``` "root"
+1. Ensure you are root
 2. run: ```npx cypress run --spec "Path TO File"```
     - Example for this project: ```npx cypress run --spec "cypress/e2e/createUserswagAPI.spec.js"```
 
@@ -65,3 +65,22 @@ The project is setup mainly for "local" change to "Dev" push CI | CD. This will 
 
 3. One new feature for Calliope.pro (I know this could be achieved with API BUT im talking more APP wizard setup, make it seamless)
     - An Integration with "GitHub", there are some cool things that could be done. For instance, I could send the "mocha-test" results directly to Calliope.pro and           then send those results to a "slack integration". This is very apealing to me, I generally am in favor of kicking off a build and not having to watch it the      entire time and or do manual things to get my results! Kick off the CI | CD and then go for a coffee - This is what I aim for 😜
+
+4. I used my experience to select the scenarios I wanted to cover in my automation first.
+    - I want to be able to use re-usable code. So I immediately looked for any page that had a "Sign Up' or "Log in" feature, this hits my criteria of being "re-   usable", 
+    - This will give me an return on my Investment (ROI) a lot sooner than lets say a feature where a user "Updates an email" as this should happen maybe once or twice in a year (If that) so the risk is less. 
+    - My main objective is to get a regression suite established as soon as possible, to allow me to focus on the more intricate parts of the application / profuct / feature.
+    - I assess the application first "What am I dealing with" then make assumptions (Experience) on the risk factors. If a user cant login and or signup, this normally equates to monetary losses. I normally use "AC" acceptance criteria for testing scenarios, these are normally givent to me by a product team or a Business analyst etc.
+
+5. Why are the scenarios the most important:
+    - They hold the most risk.
+    - They will give me a higher as well as faster ROI.
+    - They establish the foundations to the framework, im able to re-use the code.
+    - They form part of a regression suite, which should be re-runable and run frequently. This helps with "breaking changes" detection.
+
+6. Next steps to the project:
+    - Increase coverage! The application for this example is very basic, but the assumption if I were inbedded in a dev team thats working on the product, is to increate the coverage of testing. Get as much into the regression suite as possible.
+    - Ensure there is no flaky tests. If the regression suite is too be trusted, tests need to be dynamic and be able to run on isolation.
+    - The CI | CD pipeline is very basic. Would want to increase performance and Integrations to other products I.E: Azure or AWS.
+    - Would implement "Percy" UI testing for free basically!
+    - There are many many things that can be done!
