@@ -51,7 +51,7 @@ The project is setup mainly for "local" change to "Dev" push CI | CD. This will 
 
 
 **Assignment Section**
-1. link to results on Calliope.pro: 
+1. link to results on Calliope.pro: https://app.calliope.pro/reports/160467
 2. One improvement for Calliope.pro
     - As a returning user, hitting the home page for https://www.calliope.pro/ im faced with this page:
 
@@ -84,3 +84,4 @@ The project is setup mainly for "local" change to "Dev" push CI | CD. This will 
     - The CI | CD pipeline is very basic. Would want to increase performance and Integrations to other products I.E: Azure or AWS.
     - Would implement "Percy" UI testing for free basically!
     - There are many many things that can be done!
+    - I would seperate the UI tests from the API tests, would use Postman / Newman for API testing as its my preference!
